@@ -1,65 +1,62 @@
 class Car {
     constructor() {
         this.exists = true
-        this.speed = true
+        this.speed = 0
         this.rpm = 1000
         this.color = 'blue'
         this.wheels = 4
         this.honk = "BEEP!"
         this.modelYear = "brand new"
-        this.on = "the lights are on"
-        this.off = "the lights are off"
+        this.lights = false
+        this.signal = false
+        this.signalL = "left"
+        this.signalR = "right"
     }
 
     doesExist() {
         return this.exists
     }
-
     numberWheels() {
         return this.wheels
     }
-
     honkHorn() {
         return this.honk
-    }
-    createToyota() {
-        return this.exists
-    }
-    toyotaHorn() {
-        let toyBeep = this.honk
-        toyBeep = 'whoop'
-        return toyBeep
-    }
-    createLexus() {
-        return this.exists
-    }
-    lexusHonk() {
-        let lexBeep = this.honk
-        lexBeep = 'beep'
-        return lexBeep
-    }
-    createTesla() {
-        return this.exists
-    }
-    teslaHonk() {
-        let tesBeep = this.honk
-        tesBeep = "Beep-bee-bee-boop-bee-doo-weep"
-        return tesBeep
     }
     makeYear() {
         return this.modelYear
     }
-    changeLightsOn() {
-        return this.on
+    lightSwitchOn() {
+        this.lights = !this.lights
+        return this.lights
     }
-    changeLightsOff() {
-        return this.off
+    lightSwitchOff() {
+        this.lights = this.lights
+        return this.lights
     }
-    checkIfLightOn() {
-        changeLightsOn()
-        if (this.on) {
-            return true
-        }
+    checkLights() {
+        return this.lights
+    }
+    turnRight() {
+        return this.signalR
+    }
+    turnLeft() {
+        return this.signalL
+    }
+    startingSpeed() {
+        return this.speed
+    }
+    speedUp(speed) {
+        this.speed = this.speed + speed
+        return this.speed
+    }
+    slow(speed) {
+        this.speed = this.speed - speed
+        return this.speed
+    }
+    carInfo() {
+        var year = ("My model year is" + this.modelYear)
+        return year
+        // return toyota.toString()
     }
 }
 
